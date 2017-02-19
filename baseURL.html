@@ -1,0 +1,37 @@
+<html>
+<head>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+<script type="text/javascript">
+//Defining an object called apiDetail as JSON object and defining all the properties as asked in question
+function makeAPICall(){
+var apiDetail = {
+	baseUrl:'https://acadgild.com',
+method:'post',
+requestAPIParameter:'./user',
+header:'this is header'
+
+}
+
+//Making an API call using POST method
+
+$.ajax({ //ajaxcall
+
+type:'POST', //type is POST
+url:apiDetail["baseUrl"], //URL is taken from our object's URL property
+data:apiDetail,//data is defined as our object apiDetail
+success:function(data){ //this will be executed on success
+	console.log("success");
+	console.log(data["header"]);
+},
+error:function(){//this will be executed on error
+	console.log("error");
+
+}
+})
+}
+</script>
+</head>
+<body onload="">
+
+</body>
+</html>
